@@ -13,7 +13,6 @@
 - Write all poems
 
 **Recipes:**
-- Table of Contents design
 - Write all recipes
 
 **Family Tree:**
@@ -21,8 +20,10 @@
 - Multiple trees?
 - Friends list
 
-### Refer
-SimplyRecipes https://www.youtube.com/watch?v=m3LbCAL9JUI </br>
-https://www.youtube.com/watch?v=-8LTPIJBGwQ </br>
-Recipe Box https://www.youtube.com/watch?v=Gi-iGatrBHo </br>
-Home Page https://www.youtube.com/watch?v=mrOR9hpq40w </br>
+**CSS:**
+- remove normalize in main file
+- check media screen size
+- phone vs desktop design
+
+#### Reference
+SimplyRecipes https://www.youtube.com/watch?v=m3LbCAL9JUI
