@@ -19,6 +19,7 @@
 - Try windows explorer style
 - Multiple trees?
 - Friends list
+- Authenticate?
 
 **CSS:**
 - remove normalize in main file
