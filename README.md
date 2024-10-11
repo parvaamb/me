@@ -22,6 +22,7 @@
 
 **CSS:**
 - remove normalize in main file
+- remove unused styling
 - check media screen size
 - phone vs desktop design
 
