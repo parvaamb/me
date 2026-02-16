@@ -13,159 +13,8 @@
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     />	
-	<!-- TODO: Authentication -->
   </head>
-<style>
-/*Now the CSS TODO: navbar ends when scrolling horizontally*/
-* {
-  margin: 0;
-  padding: 0;
-}
-.tree {
-  width: 1000px;
-  font: 16px Verdana, sans-serif;
-}
-.tree ul {
-	padding-top: 20px; 
-	position: relative;	
-	transition: all 0.5s;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-}
-
-.tree li {
-	float: left; text-align: center;
-	list-style-type: none;
-	position: relative;
-	padding: 20px 5px 0 5px;
-	
-	transition: all 0.5s;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-}
-
-/*We will use ::before and ::after to draw the connectors*/
-
-.tree li::before, .tree li::after{
-	content: '';
-	position: absolute; top: 0; right: 50%;
-	border-top: 2px solid #65738c;
-	width: 50%; height: 20px;
-}
-.tree li::after{
-	right: auto; left: 50%;
-	border-left: 2px solid #65738c;
-}
-
-/*We need to remove left-right connectors from elements without 
-any siblings*/
-.tree li:only-child::after, .tree li:only-child::before {
-	display: none;
-}
-
-/*Remove space from the top of single children*/
-.tree li:only-child{ padding-top: 0;}
-
-/*Remove left connector from first child and 
-right connector from last child*/
-.tree li:first-child::before, .tree li:last-child::after{
-	border: 0 none;
-}
-/*Adding back the vertical connector to the last nodes*/
-.tree li:last-child::before{
-	border-right: 2px solid #65738c;
-	border-radius: 0 5px 0 0;
-	-webkit-border-radius: 0 5px 0 0;
-	-moz-border-radius: 0 5px 0 0;
-}
-.tree li:first-child::after{
-	border-radius: 5px 0 0 0;
-	-webkit-border-radius: 5px 0 0 0;
-	-moz-border-radius: 5px 0 0 0;
-}
-
-/*Time to add downward connectors from parents*/
-.tree ul ul::before{
-	content: '';
-	position: absolute; top: 0; left: 50%;
-	border-left: 2px solid #65738c;
-	width: 0; height: 20px;
-}
-
-.tree li div{
-	border: 2px solid #65738c;
-	padding: 5px 10px;
-	text-decoration: none;
-	display: inline-block;
-	
-	border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	
-	transition: all 0.5s;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-}
-
-.tree li div .male {
-	background-color:lightblue;
-	padding:5px;
-	border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-}
-
-.tree li div .female {
-	background-color:lightpink;
-	padding:5px;
-	border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-}
-
-/*Time for some hover effects*/
-/*We will apply the hover effect to the lineage of the element also*/
-.tree li div:hover, .tree li div:hover+ul li div {
-	background: #c8e4f8; border: 2px solid #000;
-}
-/*Connector styles on hover not working*/
-	.tree li div:hover+ul li::after, 
-	.tree li div:hover+ul li::before, 
-	.tree li div:hover+ul::before, 
-	.tree li div:hover+ul ul::before{
-	border-color: #000;
-}
-
-.caret {
-  cursor: pointer;
-  -webkit-user-select: none; /* Safari 3.1+ */
-  -moz-user-select: none; /* Firefox 2+ */
-  -ms-user-select: none; /* IE 10+ */
-  user-select: none;
-}
-
-.caret::before {
-  content: "\2B";
-  color: black;
-  display: inline-block;
-}
-
-.caret-down::before {
-  content: "\2D";
-  color: black;
-  display: inline-block;
-}
-
-.nested {
-  display: block;
-}
-
-.active {
-  display: none;
-}
-</style>
-</head>
-<body>
+  <body>
     <nav class="navbar">
       <div class="nav-center">
         <div class="nav-header">
@@ -196,59 +45,76 @@ right connector from last child*/
         </div>
       </div>
     </nav>
+    <button onclick="topFunction()" id="scrollbtn"><i class="fas fa-arrow-circle-up"></i></button>
 
-<div class="tree">
+	<main class="page">
+    <section class="lists-page">
+	<h3>Family Trees</h3>
 	<ul>
-		<li>
-			<span class="caret"><div><span class="male">V Saya</span></div></span>
-			<ul class="nested">
-				<li>
-					<span class="caret"><div><span class="male">Vishwas Saya</span></div></span>
-					<ul class="nested">
-						<li><div><span class="male">Venkatesh Saya</span></div></li>
-						<li><div><span class="female">Sulochana</span></div></li>
-					</ul>
+	  <li><span class="caret">Subba Rao - Padmavati</span>
+		<section class="tree">
+	      <ul class="tree nested">
+			<li><span class="caret">UdayShankar - Manjula</span>
+		      <ul class="nested">
+			    <li><span class="caret">Arpita - Dileep</span></li>
+			    <li><span class="nocaret">Amruth - Bhavishya</span></li>
+		      </ul>
+		    </li>
+			<li><span class="caret">Venkatesh Saya - Sulochana Saya</span>
+		  	  <ul class="nested">
+				<li><span class="caret">Vishwas Saya - Ambika Parvati</span>
+			  	  <ul class="nested">
+					<li><span class="nocaret">Vidhat Saya</span></li>
+				  </ul>
 				</li>
-				<li>
-					<span class="caret"><div><span class="female">Ambika Parvati</span></div></span>
-					<ul class="nested">
-						<li><div><span class="male">Ramesha Bhatt</span></div></li>
-						<li><div><span class="female">Suma Ramesh</span></div></li>
-					</ul>
-				</li>
-			</ul>
-		</li>
+				<li><span class="nocaret">Vikas Saya</span></li>
+		  	  </ul>
+			</li>
+		  	<li><span class="caret">Chandrika - Nalinaksha</span>
+		  	  <ul class="nested">
+			    <li><span class="caret">Gaurav - </span></li>
+			    <li><span class="caret">Anusha - </span></li>
+		  	  </ul>
+		    </li>
+	      </ul>
+		</section>
+	  </li>
+	  <li><span class="caret">Siddhamoole Subrahmanya - Susheela</span>
+		<section class="tree">
+	    <ul class="nested">
+		  <li><span class="caret">Ramana</span>
+		  	<ul class="nested">
+			  <li><span class="caret">Sukrutha</span></li>
+		  	</ul>
+		  </li>
+	  	</ul>
+		</section>
+	  </li>
+	  <li><span class="caret">Saravu Krishna Bhat</span>
+		<section class="tree">
+		<ul class="nested">
+		  <li><span class="caret">Narayana - Shankari</span>
+		  	<ul class="nested">
+			  <li><span class="caret">Savitri Patrodi</span></li>
+				<ul class="nested"><li>Soorya, Vijaya, Shankara, Sadashiva, Venkataramana</li></ul>
+			  <li><span class="caret">Puttanna - Saraswathi</span></li>
+			  <li><span class="caret">Kamala - Keshava</span></li>
+			  <li><span class="caret">Ganappa - Vijaya</span></li>
+			  <li><span class="caret">Jayarama - Lakshmi</span></li>
+			  <li><span class="caret">Devaki - Ganapayya</span></li>
+			  <li><span class="caret">Govinda - Ratna</span></li>
+			  <li><span class="caret">Subrahmanya - Shashi</span></li>
+		  	</ul>
+		  </li>		
+		</ul>
+		</section>
+	  </li>
 	</ul>
-</div>
-<h3>2</h3>
-<div>
-	<ul>
-		<li>
-			<span class="caret"><div>V Saya</div></span>
-			<ul class="nested">
-				<li>
-					<span class="caret"><div>Vishwas Saya</div></span>
-					<ul class="nested">
-						<li><div><span class="male">Venkatesh Saya</span></div></li>
-						<li><div><span class="female">Sulochana</span></div></li>
-					</ul>
-				</li>
-				<li>
-					<span class="caret"><div><span class="female">Ambika Parvati</span></div></span>
-					<ul class="nested">
-						<li><div><span class="male">Ramesha Bhatt</span></div></li>
-						<li><div><span class="female">Suma Ramesh</span></div></li>
-					</ul>
-				</li>
-			</ul>
-		</li>
-	</ul>
-</div>
-    <footer class="page-footer">
-      <p>
-        AmbikaParvati &copy; <span id="date"></span>
-      </p>
-    </footer>
-    <script src="../js/app.js"></script>
+	</section>
+	</main>
+	<footer class="page-footer">
+ 	  <p>AmbikaParvati &copy; <span id="date"></span></p>
+	</footer>
+	<script src="../js/app.js"></script>
   </body>
 </html>

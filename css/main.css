@@ -37,8 +37,7 @@ html {
   --red-light: #f8d7da;
   --red-dark: #842029;
   --green-light: #d1e7dd;
-  --green-dark: #0f5132;
-  --green-home: #4c6712;
+  --green-dark: #006134;
 
   /* fonts  */
   --headingFont: 'Roboto', sans-serif;
@@ -138,7 +137,7 @@ ol {
 .btn {
   cursor: pointer;
   color: var(--white);
-  background: var(--green-home);
+  background: var(--green-dark);
   border: transparent;
   border-radius: var(--borderRadius);
   padding: 0.375rem 0.75rem;
@@ -432,9 +431,9 @@ Error
 }
 
 /*
-=============== 
+==================== 
 About & Contact Page
-===============
+====================
 */
 
 .about-page h3 {
@@ -479,9 +478,9 @@ About & Contact Page
 }
 
 /*
-=============== 
+============================ 
 Lists Page : Poems & Recipes 
-===============
+============================
 */
 
 .lists-page h3 {
@@ -495,7 +494,7 @@ Lists Page : Poems & Recipes
   font-weight: bold;
 }
 .lists-page div {
-  border: 3px solid var(--green-home);
+  border: 3px solid var(--green-dark);
   background-color: var(--grey-100);
   width: 500px;
   padding: 20px;
@@ -510,7 +509,7 @@ Lists Page : Poems & Recipes
   z-index: 99;
   font-size: 50px;
   border: none;
-  color: var(--green-home);
+  color: var(--green-dark);
   background-color: var(--backgroundColor);
   cursor: pointer;
   border-radius: 50%;
@@ -534,4 +533,76 @@ Lists Page : Poems & Recipes
 .optional {
   font-style: italic;
   font-size: 0.9rem;
+}
+
+/*
+================
+Family Tree Page 
+================
+*/
+
+.tree ul li {
+  border-left: 2px solid var(--green-dark);
+  position: relative;
+}
+
+.tree ul {
+	list-style-type: none;
+	padding-bottom: 5px;
+}
+
+.tree ul li::before {
+  content: '';
+  position: absolute;
+  top: 12px; left: 0px;
+  border-bottom: 2px solid var(--black);    
+  width: 14px;
+}
+
+.tree ul li:last-child {
+  border-left:none;
+}
+
+.tree ul li:last-child::before {
+  border-left: 2px solid var(--red-dark);
+  height: 15px;
+  margin-top:-13px;
+}
+
+.caret {
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
+}
+
+.nocaret::before {	
+  content: "\25B8";
+  padding-left: 7px;
+}
+
+.nocaret::before, .caret::before {	
+  color: black;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.caret::before {	
+  content: "\25B6";
+  padding-left: 5px;
+}
+
+.caret-down::before {
+  content: "\25BC";
+  color: black;
+  display: inline-block;
+}
+
+.nested {
+  display: none;
+}
+
+.active {
+  display: block;
 }
