@@ -446,7 +446,9 @@ About & Contact Page
   padding-bottom: 3rem;
 }
 .te-logo {
-  height: 1.25rem;
+  height: 1.15rem;
+  padding-left: 3px;
+  padding-right: 3px;
   transition: var(--transition);
 }
 .te-logo:hover {
