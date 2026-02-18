@@ -15,6 +15,18 @@ navBtnDOM.addEventListener('click', () => {
   links.classList.toggle('show-links')
 })
 
+// password protection for family tree page
+function checkPassword() {
+  var correctPassword = "ABC)(*"; // Congratulations, you found the password! Just trying a fun way to add a layer of protection.
+  var enteredPassword = document.getElementById("pswd").value;
+  if (enteredPassword === correctPassword) {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("protected").style.display = "block";
+  } else {
+    alert("Incorrect password. Access denied.");
+  }
+}
+
 // collapsible family tree
 var toggler = document.getElementsByClassName("caret");
 var i;

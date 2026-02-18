@@ -48,7 +48,14 @@
     <button onclick="topFunction()" id="scrollbtn"><i class="fas fa-arrow-circle-up"></i></button>
 
 	<main class="page">
-    <section class="lists-page">
+	<div id="login">
+    	<h3>To view family member details,</h3>
+    	<label for="pswd">enter password:</label>
+    	<input type="password" id="pswd">
+    	<input type="button" value="Submit" onclick="checkPassword();">
+	</div>
+	<div id="protected" style="display: none;">
+	<section class="lists-page">
 	<h3>Family Trees</h3>
 	<ul style="list-style-type: none;">
 	  <li><span class="caret">Subba Rao - Padmavati</span>
@@ -131,6 +138,7 @@
 	  </li>
 	</ul>
 	</section>
+	</div>
 	</main>
 	<footer class="page-footer">
  	  <p>AmbikaParvati &copy; <span id="date"></span></p>
