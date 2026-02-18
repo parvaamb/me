@@ -544,11 +544,11 @@ Family Tree Page
 */
 
 .tree ul li {
-  border-left: 2px solid var(--green-dark);
+  border-left: 2px solid var(--black);
   position: relative;
 }
 
-.tree ul {
+.treeroot, .tree ul {
 	list-style-type: none;
 	padding-bottom: 5px;
 }
@@ -566,7 +566,7 @@ Family Tree Page
 }
 
 .tree ul li:last-child::before {
-  border-left: 2px solid var(--red-dark);
+  border-left: 2px solid var(--black);
   height: 15px;
   margin-top:-13px;
 }
